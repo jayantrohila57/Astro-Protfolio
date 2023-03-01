@@ -1,0 +1,29 @@
+---
+import { SITE } from '~/config.mjs'
+import Layout from '~/layouts/PageLayout.astro'
+
+import Hero from '~/components/widgets/Hero.astro'
+
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+}
+---
+
+<Layout {meta}>
+  <Hero
+    callToAction={{ text: 'Call 8445987241', href: 'tel:+918445987241', icon: 'tabler:download' }}
+    callToAction2={{ text: 'Whatsapp', href: 'whatsapp://send?abid=8445987241&text=Hello' }}
+    image={{ src: import('~/assets/images/hero.png'), alt: 'Trisha Hero Image' }}
+  >
+    <Fragment slot="title">
+      <span>Trisha Exercise Book</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline"> <span class="font-semibold">Trisha Exercise Book</span> High Quality Stationary Products.</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600"></span> Contact For purchase our products in bulk. Product Created by Mittal Traders
+    </Fragment>
+  </Hero>
+</Layout>
